@@ -1,0 +1,28 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #eaf0f7;
+  color: #50649c;
+  font-size: 13px;
+}
+.mat-form-field .mat-form-field-label {
+  color: #fff;
+}
+.mat-form-field.mat-focused .mat-form-field-label, .mat-form-field.mat-focused .mat-placeholder-required {
+  color: #fff;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #fff;
+}
+.login-remember  .mat-checkbox-inner-container {
+  width: 15px;
+  height: 15px;
+}
+.login-remember .mat-checkbox-frame {
+  border-color: #fff;
+}
+.login-remember .mat-checkbox-label {
+  color: #fff;
+}

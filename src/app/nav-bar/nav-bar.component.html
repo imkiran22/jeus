@@ -1,0 +1,54 @@
+<div *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <!-- <div class="area"></div> -->
+  <nav class="main-menu">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fa fa-dashboard fa-2x"></i>
+          <span class="nav-text">
+            Dashboard
+          </span>
+        </a>
+
+      </li>
+      <li class="has-subnav">
+        <a href="#">
+          <i class="fa fa-user-md fa-2x"></i>
+          <span class="nav-text">
+            Patients
+          </span>
+        </a>
+
+      </li>
+      <li class="has-subnav">
+        <a href="#">
+          <i class="fa fa-wheelchair fa-2x"></i>
+          <span class="nav-text">
+            Doctors
+          </span>
+        </a>
+
+      </li>
+      <li class="has-subnav">
+        <a href="#">
+          <i class="fa fa-calendar fa-2x"></i>
+          <span class="nav-text">
+            Appointments
+          </span>
+        </a>
+
+      </li>
+    </ul>
+
+    <ul class="logout">
+      <li>
+        <a (click)="logout()">
+          <i class="fa fa-power-off fa-2x"></i>
+          <span class="nav-text">
+            Logout
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

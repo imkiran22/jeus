@@ -1,3 +1,39 @@
 h1 {
     text-align: center;
 }
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.inner-container{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border-radius: 2px;
+    border-color: #ebeff6;
+}
+.patient-table {
+    .list-icon {
+        font-size: 20px;
+    }
+    table {
+        th{
+          background: #fafbfc;
+          color: #717171;
+          border-bottom: 1px solid #e0e4e8;
+          padding: 10px 8px;
+          font-size: 13px;
+          font-weight: 700;
+        }
+        td {
+            font-size: 13px;
+            color: #717171;
+        }
+    }
+}

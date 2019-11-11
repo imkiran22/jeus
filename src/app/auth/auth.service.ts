@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { User } from './user';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { LocalStorageService } from '../app-services/local-storage.service';
 
 @Injectable()
 export class AuthService {
@@ -15,22 +16,23 @@ export class AuthService {
 
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private localStorageService: LocalStorageService
   ) {
     
   }
 
   isAuthenticated() {
-    const bearer_token = localStorage.getItem('medorama_bearer-token');
-    const medorama_uuid = localStorage.getItem('medorama_uuid');
-    const name = localStorage.getItem('name');
+    const bearer_token = this.localStorageService.getItem('medorama_bearer-token');
+    const medorama_uuid = this.localStorageService.getItem('medorama_uuid');
+    const name = this.localStorageService.getItem('name');
     const loggedIn = bearer_token && medorama_uuid ? true : false;
     this.loggedIn.next(loggedIn);
     return loggedIn;
   }
 
   private get loginUrl() {
-    return `${environment.authServiceUrl}/api/v1/users/sign_in`;
+    return `${environment.entityServiceUrl}/api/v1/users/sign_in`;
   }
   login(user: User) {
     const { userName, password } = user;
@@ -41,11 +43,12 @@ export class AuthService {
   }
 
   storeAuthTokens(data) {
-    localStorage.setItem('medorama_bearer-token', data['bearer-token']);
-    localStorage.setItem('name', data['name']);
-    localStorage.setItem('user_type', data['user_type']);
-    localStorage.setItem('medorama_uuid', data['uuid']);
-    localStorage.setItem('hospitals', data['hospitals']);
+    this.localStorageService.setItem('medorama_bearer-token', data['bearer-token'])
+    this.localStorageService.setItem('name', data['name'])
+    this.localStorageService.setItem('user_type', data['user_type']);
+    this.localStorageService.setItem('medorama_uuid', data['uuid']);
+    this.localStorageService.setItem('hospitals', JSON.stringify(data['hospitals']));
+    this.localStorageService.setItem('current_hospital', JSON.stringify(data['hospitals'][0]))
     this.loggedIn.next(true);
   }
 

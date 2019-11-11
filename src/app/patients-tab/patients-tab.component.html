@@ -1,23 +1,32 @@
 <ngb-tabset>
-  <ngb-tab title="Waiting">
+  <ngb-tab title="All Patients">
     <ng-template ngbTabContent>
-        <app-patients-table></app-patients-table>
+      <app-patients-table [status]="'all_patients'"></app-patients-table>
     </ng-template>
   </ngb-tab>
-  <ngb-tab>
-    <ng-template ngbTabTitle>In-Consultants</ng-template>
+  <ngb-tab title="Waiting">
     <ng-template ngbTabContent>
-      In-Consultants
+        <app-patients-table [status]="'waiting'"></app-patients-table>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="In Consultation">
+    <ng-template ngbTabContent>
+      <app-patients-table [status]="'in_consultation'"></app-patients-table>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="In Pharmacy">
+    <ng-template ngbTabContent>
+      <app-patients-table [status]="'in_pharmacy'"></app-patients-table>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="In Lab">
+    <ng-template ngbTabContent>
+      <app-patients-table [status]="'in_lab'"></app-patients-table>
     </ng-template>
   </ngb-tab>
   <ngb-tab title="Admitted">
     <ng-template ngbTabContent>
-     Admitted
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="In patients">
-    <ng-template ngbTabContent>
-     In patients
+      <app-patients-table [status]="'admitted'"></app-patients-table>
     </ng-template>
   </ngb-tab>
 </ngb-tabset>

@@ -21,7 +21,8 @@ import { PatientsComponent } from './patients/patients.component';
 import { PatientsTabComponent } from './patients-tab/patients-tab.component';
 import { PatientsTableComponent } from './patients-table/patients-table.component';
 import { PatientsFilterComponent } from './patients-filter/patients-filter.component';
-
+import {PatientService} from './app-services/patients.service'
+import {LocalStorageService} from './app-services/local-storage.service'
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { PatientsFilterComponent } from './patients-filter/patients-filter.compo
     HttpClientModule,
     NgbModule
   ],
-  providers: [AuthService, AuthGuard, AuthCompleteGuard, {provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [AuthService, LocalStorageService, PatientService, AuthGuard, AuthCompleteGuard, {provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,32 +1,54 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col">#</th>
-    <th scope="col">Country</th>
-    <th scope="col">Area</th>
-    <th scope="col">Population</th>
+    <th scope="col">Profile Picture</th>
+    <th scope="col">Registration Number</th>
+    <th scope="col">Name</th>
+    <th scope="col">Diagnosis</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Age</th>
+    <th scope="col">Phone Number</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let country of countries">
-    <td scope="row">{{ country.id }}</td>
-    <td>
-      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
-      {{ country.name }}
-    </td>
-    <td>{{ country.area | number}}</td>
-    <td>{{ country.population | number }}</td>
-  </tr>
+    <tr *ngFor="let patient of patients">
+      <td scope="row">
+          <span *ngIf="patient.profileThumbnailUrl == undefined">
+            <img *ngIf="patient.gender == 'male'"  src= "/assets/images/male_avatar.png" alt="Avatar" class="avatar">
+            <img *ngIf="patient.gender == 'female' || patient.gender == 'third_gender'"  src= "/assets/images/female_avatar.png" alt="Avatar" class="avatar">   
+          </span>
+          <span *ngIf="patient.profileThumbnailUrl != null">
+            <img [src]= "patient.profileThumbnailUrl" alt="Avatar" class="avatar">
+          </span>
+      </td>
+      <td>
+        {{patient.patientRegistrationNumber}}
+      </td>
+      <td>
+        {{patient.name}}
+      </td>
+      <td>
+        {{patient.diagnosis}}
+      </td>
+      <td>
+        {{patient.gender}}
+      </td>
+      <td>
+        {{patient.age}}
+      </td>
+      <td>
+        {{patient.phoneNumber}}
+      </td>
+    </tr>
   </tbody>
 </table>
 
 <div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+  <ngb-pagination (pageChange)="onPageChange($event)" [collectionSize]="patientsCount" [(page)]="page" [pageSize]="pageSize">
   </ngb-pagination>
-
-  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-    <option [ngValue]="2">2 items per page</option>
-    <option [ngValue]="4">4 items per page</option>
-    <option [ngValue]="6">6 items per page</option>
+  <select class="custom-select" style="width: auto" [ngModel]="pageSize" (ngModelChange)="onPageCountChange($event)">
+    <option [ngValue]="10">10 items per page</option>
+    <option [ngValue]="20">20 items per page</option>
+    <option [ngValue]="50">50 items per page</option>
   </select>
 </div>

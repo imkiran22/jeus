@@ -14,7 +14,9 @@
     "@angular/platform-browser-dynamic": "6.0.2",
     "@angular/router": "6.0.2",
     "@ng-bootstrap/ng-bootstrap": "^3.3.1",
+    "class-transformer": "^0.2.3",
     "core-js": "2.5.5",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "6.1.0",
     "typescript": "2.9.2",
     "zone.js": "0.8.26"

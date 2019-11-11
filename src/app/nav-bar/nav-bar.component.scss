@@ -19,7 +19,7 @@
   }
   
   .main-menu {
-  background:#4d79f6;
+  background:#3248a8;
   border-right:1px solid #e5e5e5;
   position:absolute;
   top:50;
@@ -32,7 +32,7 @@
   transition:width .05s linear;
   -webkit-transform:translateZ(0) scale(1,1);
   z-index:1000;
-  color: #4d79f6;
+  color: #3248a8;
   }
   
   .main-menu>ul {
@@ -75,7 +75,7 @@
     display:table-cell;
     vertical-align:middle;
     width:190px;
-    font-size: 13px;
+    font-size: 15px;
     font-family: 'Poppins', sans-serif;
     padding-top: 5px;
   }

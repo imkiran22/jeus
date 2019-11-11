@@ -1,4 +1,20 @@
 <form action="">
+  <mv-slider data-slider-handle="square" data-slider-id="ex1Slider" [(value)]="value" [min]="1" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
+  <ng-select
+    [items]="people"
+    [multiple]="true"
+    bindLabel="name"
+    [selectableGroup]="false"
+    [closeOnSelect]="false"
+    bindValue="id"
+    [(ngModel)]="selectedPeople" [ngModelOptions]="{standalone: true}">
+    <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+        <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.gender | uppercase}}
+    </ng-template>
+    <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+        <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}
+    </ng-template>
+</ng-select>
  <div class="form-check form-check-inline">
   <input class="form-check-input" type="radio" name="male" id="male" value="male" >
   <label class="form-check-label" for="male">

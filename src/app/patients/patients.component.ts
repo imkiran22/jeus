@@ -8,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class PatientsComponent implements OnInit {
 
     public title: string = 'Patients';
+   
     constructor() { }
 
     ngOnInit() {
-        
+       
     }
 
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppMaterialModule } from './app-material/app-material.module';
@@ -46,7 +47,8 @@ import {LocalStorageService} from './app-services/local-storage.service'
     BrowserAnimationsModule,
     AppMaterialModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    SharedModule
   ],
   providers: [AuthService, LocalStorageService, PatientService, AuthGuard, AuthCompleteGuard, {provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]

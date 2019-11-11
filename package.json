@@ -17,6 +17,8 @@
     "class-transformer": "^0.2.3",
     "core-js": "2.5.5",
     "reflect-metadata": "^0.1.13",
+    "@ng-select/ng-select": "^2.20.5",
+    "ngx-bootstrap-slider": "^1.7.0",
     "rxjs": "6.1.0",
     "typescript": "2.9.2",
     "zone.js": "0.8.26"

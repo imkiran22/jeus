@@ -1,36 +1,41 @@
-<form action="">
-  <mv-slider data-slider-handle="square" data-slider-id="ex1Slider" [(value)]="value" [min]="1" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
-  <ng-select
-    [items]="people"
-    [multiple]="true"
-    bindLabel="name"
-    [selectableGroup]="false"
-    [closeOnSelect]="false"
-    bindValue="id"
-    [(ngModel)]="selectedPeople" [ngModelOptions]="{standalone: true}">
-    <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
-        <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.gender | uppercase}}
-    </ng-template>
-    <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-        <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}
-    </ng-template>
-</ng-select>
- <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="male" id="male" value="male" >
-  <label class="form-check-label" for="male">
-    Male
-  </label>
+<div class="filter-popup-wrapper">
+  <div class="btn btn-primary float-right" (click)="ShowHideButton()">Filter</div>
+  <div class="filter-popup-inner" *ngIf="showMainContent">
+    <form action="">
+      <div class="form-group gender-col">
+        <label>Gender</label>
+        <div class="fm-radio-inline">
+          <label class="fm-radio">
+            <input type="radio"> Male
+            <span></span>
+          </label>
+          <label class="fm-radio">
+            <input type="radio"> Female
+            <span></span>
+          </label>
+        </div>
+      </div>
+      <div class="form-group age-col">
+        <label>Age</label>
+        <mv-slider data-slider-handle="square" data-slider-id="ex1Slider" [(value)]="value" [min]="1" [max]="100"
+          [enabled]="enabled" (change)="change()"></mv-slider>
+      </div>
+      <div class="form-group dia-col">
+        <label>Diagnostics</label>
+        <ng-select [items]="people" [multiple]="true" bindLabel="name" [selectableGroup]="false" [closeOnSelect]="false"
+          bindValue="id" [(ngModel)]="selectedPeople" [ngModelOptions]="{standalone: true}">
+          <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+            <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.gender | uppercase}}
+          </ng-template>
+          <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+            <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+          </ng-template>
+        </ng-select>
+      </div>
+      <div class="filter-footer">
+        <div class="btn btn-secondary">Cancel</div>
+        <div class="btn btn-success">Apply</div>
+      </div>
+    </form>
+  </div>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="female" id="female" value="female" >
-  <label class="form-check-label" for="female">
-    Female
-  </label>
-</div>
-<select class="custom-select col-sm-2">
-  <option selected>Diagnostic</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-</form>

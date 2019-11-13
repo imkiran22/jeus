@@ -1,5 +1,6 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
-body{
+
+body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
@@ -7,26 +8,33 @@ body{
   color: #50649c;
   font-size: 13px;
 }
+
 .mat-form-field .mat-form-field-label {
   color: #fff;
 }
-.mat-form-field.mat-focused .mat-form-field-label, .mat-form-field.mat-focused .mat-placeholder-required {
+
+.mat-form-field.mat-focused .mat-form-field-label,
+.mat-form-field.mat-focused .mat-placeholder-required {
   color: #fff;
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: #fff;
 }
-.login-remember  .mat-checkbox-inner-container {
+
+.login-remember .mat-checkbox-inner-container {
   width: 15px;
   height: 15px;
 }
+
 .login-remember .mat-checkbox-frame {
   border-color: #fff;
 }
+
 .login-remember .mat-checkbox-label {
   color: #fff;
 }
+
 #main-content {
   font-family: 'Poppins', sans-serif;
   width: calc(100% - 60px);
@@ -34,3 +42,113 @@ body{
   margin-top: 0px;
 }
 
+.btn {
+  color: #212529;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  background: 0 0;
+  outline: 0 !important;
+  font-size: 12px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid #e2e5ec;
+  color: #595d6e;
+
+  &:hover {
+    color: #595d6e;
+    background-color: #f4f5f8;
+    border-color: #e2e5ec;
+  }
+}
+
+.btn-primary {
+  background-color: #5867dd;
+  border-color: #5867dd;
+  color: #fff;
+
+  &:hover {
+    background-color: #384ad7;
+    border-color: #2e40d4;
+  }
+}
+
+.btn-success {
+  background-color: #0abb87;
+  border-color: #0abb87;
+  color: #fff;
+
+  &:hover {
+    background-color: #08976d;
+    border-color: #078b64;
+  }
+}
+
+.btn-info {
+  background-color: #5578eb;
+  border-color: #5578eb;
+  color: #fff;
+
+  &:hover {
+    background-color: #335de7;
+    border-color: #2754e6;
+  }
+}
+
+.btn-warning {
+  background-color: #ffb822;
+  border-color: #ffb822;
+  color: #111;
+
+  &:hover {
+    color: #212529;
+    background-color: #fbaa00;
+    border-color: #eea200;
+  }
+}
+
+.btn-danger {
+  background-color: #fd397a;
+  border-color: #fd397a;
+  color: #fff;
+
+  &:hover {
+    background-color: #fd1361;
+    border-color: #fc0758;
+  }
+}
+
+.btn-link {
+  font-weight: 400;
+  color: #5867dd;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5d78ff;
+    color: #fff;
+  }
+}
+
+.filter-popup-inner {
+  .slider-track {
+    background: #ebedf2;
+    height: 5px !important;
+
+    .slider-selection {
+      background: #5867dd;
+    }
+  }
+
+  .slider-handle {
+    width: 15px;
+    height: 15px;
+    background: #5867dd;
+  }
+}

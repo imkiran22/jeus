@@ -1,3 +1,66 @@
 #ex1Slider .slider-selection {
   background: #BABABA;
 }
+
+.filter-popup-wrapper {
+  position: relative;
+
+  .filter-popup-inner {
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    right: 0px;
+    transform: translate3d(0px, 46px, 0px);
+    border: 0 !important;
+    margin: 0;
+    border-radius: 0;
+    min-width: 14rem;
+    padding: 0;
+    -webkit-box-shadow: 0 0 50px 0 rgba(82, 63, 105, .15);
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, .15);
+    border-radius: 4px;
+    background: #fff;
+    padding: 15px;
+    width: 700px;
+
+    .gender-col {
+      width: 170px;
+      float: left;
+    }
+
+    .age-col {
+      width: 230px;
+      float: left;
+    }
+
+    .dia-col {
+      width: 260px;
+      float: left;
+    }
+  }
+
+}
+
+.fm-radio-inline {
+  padding: 0 0;
+
+  .fm-radio {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    position: relative;
+    text-align: left;
+    margin-bottom: 10px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+}
+
+.filter-footer {
+  float: right;
+
+  .btn {
+    margin: 0px 5px;
+  }
+}

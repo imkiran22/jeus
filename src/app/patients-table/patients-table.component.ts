@@ -52,11 +52,8 @@ export class PatientsTableComponent implements OnInit {
     this.patientsService.getRegisteredPatients(hospitalUuid, this.paginationFilterParams).subscribe((res: {[key:string]: any}) => {
       this.patientsCount = res["patientsCount"]
       for (let index = 0; index < res.patients.length; index++) { 
-        console.log(res.patients[index]); 
         let patient: Patient= plainToClass(Patient, res.patients[index]);
         this.patients.push(patient)
-        console.log("check after this")
-        console.log(patient)
       } 
     }, (err) => {
       console.log('ERROR GETTING PATIENTS RECORDS', err);

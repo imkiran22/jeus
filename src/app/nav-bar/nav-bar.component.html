@@ -2,8 +2,8 @@
   <!-- <div class="area"></div> -->
   <nav class="main-menu">
     <ul>
-      <li>
-        <a href="#">
+      <li class="has-subnav">
+        <a routerLinkActive="active" [routerLink]="['/dashboard']">
           <i class="fa fa-dashboard fa-2x"></i>
           <span class="nav-text">
             Dashboard
@@ -21,19 +21,19 @@
 
       </li>
       <li class="has-subnav">
-        <a href="#">
+        <a routerLinkActive="active" [routerLink]="['/drugs']">
           <i class="fa fa-wheelchair fa-2x"></i>
           <span class="nav-text">
-            Doctors
+            Drugs
           </span>
         </a>
 
       </li>
       <li class="has-subnav">
-        <a href="#">
+        <a routerLinkActive="active" [routerLink]="['/calendar']">
           <i class="fa fa-calendar fa-2x"></i>
           <span class="nav-text">
-            Appointments
+            Calendar
           </span>
         </a>
 

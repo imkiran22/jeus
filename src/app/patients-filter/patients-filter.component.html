@@ -1,16 +1,20 @@
 <div class="filter-popup-wrapper">
   <div class="btn btn-primary float-right" (click)="ShowHideButton()">Filter</div>
-  <div class="filter-popup-inner" *ngIf="showMainContent">
+  <div appHideOnMouseLeave class="filter-popup-inner" #patientsfilterpopinner>
     <form action="">
       <div class="form-group gender-col">
         <label>Gender</label>
         <div class="fm-radio-inline">
           <label class="fm-radio">
-            <input type="radio"> Male
+            <input type="checkbox" [checked]="maleCheckBoxChecked" (change)="maleCheckBoxChecked = !maleCheckBoxChecked"> Male
             <span></span>
           </label>
           <label class="fm-radio">
-            <input type="radio"> Female
+              <input type="checkbox" [checked]="femaleCheckBoxChecked" (change)="femaleCheckBoxChecked = !femaleCheckBoxChecked"> Female
+              <span></span>
+          </label>
+          <label class="fm-radio">
+              <input type="checkbox" [checked]="thirdGenderCheckBoxChecked" (change)="thirdGenderCheckBoxChecked = !thirdGenderCheckBoxChecked"> Third Gender
             <span></span>
           </label>
         </div>
@@ -33,8 +37,8 @@
         </ng-select>
       </div>
       <div class="filter-footer">
-        <div class="btn btn-secondary">Cancel</div>
-        <div class="btn btn-success">Apply</div>
+        <div class="btn btn-secondary" (click)="onCancelClick()">Cancel</div>
+        <div class="btn btn-success" (click)="onApplyClick()">Apply</div>
       </div>
     </form>
   </div>

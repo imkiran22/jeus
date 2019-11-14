@@ -23,8 +23,9 @@ import { PatientsTabComponent } from './patients-tab/patients-tab.component';
 import { PatientsTableComponent } from './patients-table/patients-table.component';
 import { PatientsFilterComponent } from './patients-filter/patients-filter.component';
 import {PatientService} from './app-services/patients.service'
-import {LocalStorageService} from './app-services/local-storage.service'
-
+import {LocalStorageService} from './app-services/local-storage.service';
+import { HideOnMouseLeaveDirective } from './directives/hide-on-mouse-leave.directive';
+import { InMemoryServiceService } from './app-services/in-memory-service.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {LocalStorageService} from './app-services/local-storage.service'
     PatientsComponent,
     PatientsTabComponent,
     PatientsTableComponent,
-    PatientsFilterComponent
+    PatientsFilterComponent,
+    HideOnMouseLeaveDirective
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,13 @@ import {LocalStorageService} from './app-services/local-storage.service'
     NgbModule,
     SharedModule
   ],
-  providers: [AuthService, LocalStorageService, PatientService, AuthGuard, AuthCompleteGuard, {provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [AuthService, 
+    InMemoryServiceService, 
+    LocalStorageService, 
+    PatientService, 
+    AuthGuard, 
+    AuthCompleteGuard, 
+    {provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

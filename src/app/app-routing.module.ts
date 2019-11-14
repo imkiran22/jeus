@@ -10,6 +10,9 @@ const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [AuthCompleteGuard] },
   { path: 'patients', component: PatientsComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'drugs', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'calendar', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: ''}
 ];
 

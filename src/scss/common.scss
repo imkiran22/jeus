@@ -38,8 +38,10 @@ body {
 #main-content {
   font-family: 'Poppins', sans-serif;
   width: calc(100% - 60px);
+  height: 100%;
   margin-left: 60px;
   margin-top: 0px;
+  overflow: auto;
 }
 
 .btn {
@@ -150,5 +152,20 @@ body {
     width: 15px;
     height: 15px;
     background: #5867dd;
+  }
+}
+.block-width {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+app-patients-tab {
+  .tab-content {
+    width: 100%;
+    height: calc(100% - 0px);
+    display: block;
+    .tab-pane {
+      height: 100%;
+    }
   }
 }

@@ -24,7 +24,7 @@
   position:absolute;
   top:50;
   bottom:0;
-  height:100%;
+  height: calc(100% - 45px);
   left:0;
   width:60px;
   overflow:hidden;

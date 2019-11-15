@@ -169,3 +169,23 @@ app-patients-tab {
     }
   }
 }
+.ng5-slider{
+  .ng5-slider-pointer {
+    width: 16px !important;
+    height: 16px !important;
+    top: -7px !important;
+    outline: none;
+    &:after{
+      top: 4px !important;
+      left: 4px !important;
+    }
+  }
+  .ng5-slider-bar {
+    height: 3px !important;
+  }
+  .ng5-slider-tick {
+    width: 1px !important;
+    height: 8px !important;
+    top: 1px !important; 
+  }
+} 

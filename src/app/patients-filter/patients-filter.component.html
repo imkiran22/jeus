@@ -24,8 +24,7 @@
       </div>
       <div class="form-group age-col">
         <label>Age</label>
-        <mv-slider data-slider-handle="square" data-slider-id="ex1Slider" [(value)]="value" [min]="1" [max]="100"
-          [enabled]="enabled" (change)="change()"></mv-slider>
+          <ng5-slider [(value)]="startValue" [(highValue)]="endValue" [options]="options"></ng5-slider>
       </div>
       <div class="form-group dia-col">
         <label>Diagnostics</label>

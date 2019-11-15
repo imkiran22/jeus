@@ -22,10 +22,11 @@ import { PatientsComponent } from './patients/patients.component';
 import { PatientsTabComponent } from './patients-tab/patients-tab.component';
 import { PatientsTableComponent } from './patients-table/patients-table.component';
 import { PatientsFilterComponent } from './patients-filter/patients-filter.component';
-import {PatientService} from './app-services/patients.service'
-import {LocalStorageService} from './app-services/local-storage.service';
+import { PatientService } from './app-services/patients.service'
+import { LocalStorageService } from './app-services/local-storage.service';
 import { HideOnMouseLeaveDirective } from './directives/hide-on-mouse-leave.directive';
 import { InMemoryServiceService } from './app-services/in-memory-service.service';
+
 
 @NgModule({
   declarations: [

@@ -14,11 +14,11 @@
     "@angular/platform-browser-dynamic": "6.0.2",
     "@angular/router": "6.0.2",
     "@ng-bootstrap/ng-bootstrap": "^3.3.1",
+    "@ng-select/ng-select": "^2.20.5",
     "class-transformer": "^0.2.3",
     "core-js": "2.5.5",
+    "ng5-slider": "^1.2.4",
     "reflect-metadata": "^0.1.13",
-    "@ng-select/ng-select": "^2.20.5",
-    "ngx-bootstrap-slider": "^1.7.0",
     "rxjs": "6.1.0",
     "typescript": "2.9.2",
     "zone.js": "0.8.26"

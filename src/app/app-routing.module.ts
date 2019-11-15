@@ -7,7 +7,7 @@ import { AuthCompleteGuard } from './auth/auth-complete.guard';
 import { PatientsComponent } from './patients/patients.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', pathMatch: 'full', redirectTo: '/dashboard', canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [AuthCompleteGuard] },
   { path: 'patients', component: PatientsComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard] },

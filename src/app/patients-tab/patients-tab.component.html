@@ -1,32 +1,62 @@
+<app-patients-filter [patientsFilterModel]='patientsFilterModel' (filterApplied)="onFillterApply($event)"></app-patients-filter>
 <ngb-tabset class="block-width">
-  <ngb-tab title="All Patients">
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+      <div (click)="onTabChange('all_patients')">All Patients</div>
+    </ng-template>
     <ng-template ngbTabContent>
-      <app-patients-table [status]="'all_patients'"></app-patients-table>
+        <app-patients-table [patientsCount] = "patientsCount" [patients]="patients"
+        (onPageChange)="onPageChange($event)" [page]="tabPageNum['all_patients'] || 1" [pageSize]="tabPageCount['all_patients'] || 10" 
+        (onPageCountChange)="onPageCountChange($event)"></app-patients-table>
     </ng-template>
   </ngb-tab>
-  <ngb-tab title="Waiting">
+  <ngb-tab>
+      <ng-template ngbTabTitle>
+          <div (click)="onTabChange('waiting')">Waiting</div>
+      </ng-template>
     <ng-template ngbTabContent>
-        <app-patients-table [status]="'waiting'"></app-patients-table>
+        <app-patients-table [patientsCount] = "patientsCount" [page]="tabPageNum['waiting'] || 1" 
+          [pageSize]="tabPageCount['waiting'] || 10" [patients]="patients" (onPageChange)="onPageChange($event)" (onPageCountChange)="onPageCountChange($event)"></app-patients-table>
     </ng-template>
   </ngb-tab>
-  <ngb-tab title="In Consultation">
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+        <div (click)="onTabChange('in_consultation')">In Consultation</div>
+    </ng-template>
     <ng-template ngbTabContent>
-      <app-patients-table [status]="'in_consultation'"></app-patients-table>
+      <app-patients-table [patientsCount] = "patientsCount" 
+        [page]="tabPageNum['in_consultation'] || 1" [pageSize]="tabPageCount['in_consultation'] || 10" 
+        [patients]="patients" (onPageChange)="onPageChange($event)" (onPageCountChange)="onPageCountChange($event)"></app-patients-table>
     </ng-template>
   </ngb-tab>
-  <ngb-tab title="In Pharmacy">
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+      <div (click)="onTabChange('in_pharmacy')">In Pharmacy</div>
+    </ng-template>
     <ng-template ngbTabContent>
-      <app-patients-table [status]="'in_pharmacy'"></app-patients-table>
+      <app-patients-table [patientsCount] = "patientsCount" [patients]="patients" 
+      [page]="tabPageNum['in_pharmacy'] || 1" [pageSize]="tabPageCount['in_pharmacy'] || 10"
+      (onPageChange)="onPageChange($event)" (onPageCountChange)="onPageCountChange($event)"></app-patients-table>
     </ng-template>
   </ngb-tab>
-  <ngb-tab title="In Lab">
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+      <div (click)="onTabChange('in_lab')">In Lab</div>
+    </ng-template>
     <ng-template ngbTabContent>
-      <app-patients-table [status]="'in_lab'"></app-patients-table>
+      <app-patients-table [patientsCount] = "patientsCount" [patients]="patients" 
+      [page]="tabPageNum['in_lab'] || 1" [pageSize]="tabPageCount['in_lab'] || 10"
+      (onPageChange)="onPageChange($event)" (onPageCountChange)="onPageCountChange($event)"></app-patients-table>
     </ng-template>
   </ngb-tab>
-  <ngb-tab title="Admitted">
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+      <div (click)="onTabChange('admitted')">Admitted</div>
+    </ng-template>
     <ng-template ngbTabContent>
-      <app-patients-table [status]="'admitted'"></app-patients-table>
+      <app-patients-table [patientsCount] = "patientsCount" [patients]="patients" 
+      [page]="tabPageNum['admitted'] || 1" [pageSize]="tabPageCount['admitted'] || 10"
+      (onPageChange)="onPageChange($event)" (onPageCountChange)="onPageCountChange($event)"></app-patients-table>
     </ng-template>
   </ngb-tab>
 </ngb-tabset>

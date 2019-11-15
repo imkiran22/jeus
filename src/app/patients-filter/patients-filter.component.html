@@ -6,15 +6,18 @@
         <label>Gender</label>
         <div class="fm-radio-inline">
           <label class="fm-radio">
-            <input type="checkbox" [checked]="maleCheckBoxChecked" (change)="maleCheckBoxChecked = !maleCheckBoxChecked"> Male
+            <input type="checkbox" [checked]="patientsFilterModel.maleGenderFilterApplied" 
+              (change)="patientsFilterModel.maleGenderFilterApplied = !patientsFilterModel.maleGenderFilterApplied"> Male
             <span></span>
           </label>
           <label class="fm-radio">
-              <input type="checkbox" [checked]="femaleCheckBoxChecked" (change)="femaleCheckBoxChecked = !femaleCheckBoxChecked"> Female
+              <input type="checkbox" [checked]="patientsFilterModel.femaleGenderFilterApplied" 
+                (change)="patientsFilterModel.femaleGenderFilterApplied = !patientsFilterModel.femaleGenderFilterApplied"> Female
               <span></span>
           </label>
           <label class="fm-radio">
-              <input type="checkbox" [checked]="thirdGenderCheckBoxChecked" (change)="thirdGenderCheckBoxChecked = !thirdGenderCheckBoxChecked"> Third Gender
+              <input type="checkbox" [checked]="patientsFilterModel.thirdGenderFilterApplied" 
+                (change)="patientsFilterModel.thirdGenderFilterApplied = !patientsFilterModel.thirdGenderFilterApplied"> Third Gender
             <span></span>
           </label>
         </div>

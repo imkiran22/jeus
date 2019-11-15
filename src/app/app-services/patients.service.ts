@@ -14,15 +14,20 @@ export class PatientService {
         return `${environment.entityServiceUrl}/api/v1/hospitals/${hospitalUuid}/get_registered_patients`;
     }
 
-    getRegisteredPatients(hospitalUuid: string, paginationFilterParams: {}) {
+    getRegisteredPatients(hospitalUuid: string, queryParams: {}) {
         let getPatientsUrl :string = this.getPatientsListForHospitalUrl(hospitalUuid)
-        return this.http.get(getPatientsUrl + "?" + this.getQueryParamsUrlString(paginationFilterParams));
+        return this.http.get(getPatientsUrl + "?" + this.getQueryParamsUrlString(queryParams));
     }
 
-    getQueryParamsUrlString(paginationFilterParams: {}) :string{
+    getQueryParamsUrlString(queryParams: {}) :string {
         let queryParam :string = ""
-        queryParam = "page_count=" + paginationFilterParams["page_count"]
-        + "&" + "page_num=" + paginationFilterParams["page_num"]
+        for (var key in queryParams) {
+            if (queryParams.hasOwnProperty(key)) {
+                var val = queryParams[key];
+                queryParam = queryParam + key + "=" + val + "&"
+                console.log(val);
+            }
+        }
         return queryParam
     }
 

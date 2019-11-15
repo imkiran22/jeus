@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, Renderer2, ElementRef } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { Component, OnInit, ViewChild, Renderer2, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { PatientsFilterModel } from '../models/patients-filter.model'
 
 @Component({
     selector: 'app-patients-filter',
@@ -8,13 +7,10 @@ import { delay, map } from 'rxjs/operators';
     styleUrls: ['./patients-filter.component.scss']
 })
 export class PatientsFilterComponent implements OnInit {
-    maleCheckBoxChecked :boolean = false
-    femaleCheckBoxChecked :boolean = false
-    thirdGenderCheckBoxChecked :boolean = false
-    minAge :number = 0
-    maxAge :number = 150
-    diagnosis :string[] = []
-
+    
+    @Output() filterApplied: EventEmitter<{}> = new EventEmitter();
+    
+    @Input() patientsFilterModel :PatientsFilterModel
     @ViewChild('patientsfilterpopinner') filterPopup :ElementRef; 
     constructor(private renderer: Renderer2) { }
 
@@ -27,16 +23,7 @@ export class PatientsFilterComponent implements OnInit {
     }
 
     clearAllFilter() {
-        this.setAllPropertiesToInitialValue()
-    }
-
-    setAllPropertiesToInitialValue() {
-        this.maleCheckBoxChecked = false
-        this.femaleCheckBoxChecked = false
-        this.thirdGenderCheckBoxChecked = false
-        this.minAge = 0
-        this.maxAge = 150
-        this.diagnosis = []
+        this.patientsFilterModel.setToDefault()
     }
 
     onCancelClick() {
@@ -44,6 +31,7 @@ export class PatientsFilterComponent implements OnInit {
     }
 
     onApplyClick() {
-        console.log("apply clicked")
+        this.renderer.setStyle(this.filterPopup.nativeElement, 'visibility', 'hidden');
+        this.filterApplied.emit(this.patientsFilterModel)
     }
 }

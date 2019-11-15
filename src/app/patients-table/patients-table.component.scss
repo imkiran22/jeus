@@ -26,7 +26,7 @@
 
   td {
     font-size: 13px;
-    color: #717171;
+    color: #696666;
     width: 16%;
   }
 
@@ -79,5 +79,9 @@
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
   background-color: transparent;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Renderer2, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { PatientsFilterModel } from '../models/patients-filter.model'
 import { Options } from 'ng5-slider';
 @Component({
@@ -12,6 +12,7 @@ export class PatientsFilterComponent implements OnInit {
     maleCheckBoxChecked :boolean = false
     femaleCheckBoxChecked :boolean = false
     thirdGenderCheckBoxChecked :boolean = false
+    showFilter :boolean = false
     minAge :number = 0
     maxAge :number = 150
     diagnosis :string[] = []
@@ -25,15 +26,13 @@ export class PatientsFilterComponent implements OnInit {
       showTicks: true
     };
 
-    @ViewChild('patientsfilterpopinner') filterPopup :ElementRef; 
-    constructor(private renderer: Renderer2) { }
+    constructor() { }
 
     ngOnInit() {
-        this.renderer.setStyle(this.filterPopup.nativeElement, 'visibility', 'hidden');
     }
     
     ShowHideButton() {
-        this.renderer.setStyle(this.filterPopup.nativeElement, 'visibility', 'visible');
+        this.showFilter = !this.showFilter
     }
 
     clearAllFilter() {
@@ -41,11 +40,17 @@ export class PatientsFilterComponent implements OnInit {
     }
 
     onCancelClick() {
-        this.renderer.setStyle(this.filterPopup.nativeElement, 'visibility', 'hidden');
+        this.showFilter = false
     }
 
     onApplyClick() {
-        this.renderer.setStyle(this.filterPopup.nativeElement, 'visibility', 'hidden');
+        this.filterApplied.emit(this.patientsFilterModel)
+        this.showFilter = false
+    }
+
+    onResetFilter() {
+        this.showFilter = false
+        this.clearAllFilter()
         this.filterApplied.emit(this.patientsFilterModel)
     }
 }

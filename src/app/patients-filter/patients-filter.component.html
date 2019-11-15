@@ -1,6 +1,7 @@
 <div class="filter-popup-wrapper">
   <div class="btn btn-primary float-right" (click)="ShowHideButton()">Filter</div>
-  <div appHideOnMouseLeave class="filter-popup-inner" #patientsfilterpopinner>
+  <div class="btn btn-primary float-right" (click)="onResetFilter()">Reset</div>
+  <div *ngIf="showFilter" class="filter-popup-inner" #patientsfilterpopinner>
     <form action="">
       <div class="form-group gender-col">
         <label>Gender</label>

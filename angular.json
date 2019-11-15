@@ -23,11 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css"
+              "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/bootstrap-slider/dist/bootstrap-slider.min.js"
             ]
           },
           "configurations": {

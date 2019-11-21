@@ -5,12 +5,13 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthCompleteGuard } from './auth/auth-complete.guard';
 import { PatientsComponent } from './patients/patients.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard', canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [AuthCompleteGuard] },
   { path: 'patients', component: PatientsComponent, canActivate: [AuthGuard] },
-  { path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'drugs', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'calendar', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: ''}

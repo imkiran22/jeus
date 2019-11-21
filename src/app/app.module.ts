@@ -26,6 +26,7 @@ import { PatientService } from './app-services/patients.service'
 import { LocalStorageService } from './app-services/local-storage.service';
 import { HideOnMouseLeaveDirective } from './directives/hide-on-mouse-leave.directive';
 import { InMemoryServiceService } from './app-services/in-memory-service.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { InMemoryServiceService } from './app-services/in-memory-service.service
     PatientsTabComponent,
     PatientsTableComponent,
     PatientsFilterComponent,
-    HideOnMouseLeaveDirective
+    HideOnMouseLeaveDirective,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

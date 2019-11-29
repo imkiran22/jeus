@@ -16,7 +16,7 @@ export class AuthCompleteGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const isAuthenticated = this.authService.isAuthenticated();
         if (isAuthenticated) {
-            this.router.navigate(['/patients']);
+            this.router.navigate(['/dashboard']);
             return false;
         }
         return true;

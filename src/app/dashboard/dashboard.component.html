@@ -1,47 +1,152 @@
-<div class="block-width">
-<p>
-  dashboard works!
-</p>
-
-<ngx-charts-bar-horizontal
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="example"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  (select)="onSelect($event)">
-</ngx-charts-bar-horizontal>
-
-<ngx-charts-pie-chart
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="example"
-  [gradient]="gradient"
-  [legend]="showLegend"
-  [labels]="true"
-  (select)="onSelect($event)">
-</ngx-charts-pie-chart>
-<ngx-charts-bar-vertical-stacked
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="exampleTwo"
-  [rotateXAxisTicks]="true"
-  [showGridLines]="true"
-  [showGridLines]="true"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [trimXAxisTicks]="true"
-  [maxXAxisTickLength]="16"
-  [maxYAxisTickLength]="8"
-  (select)="onSelect($event)">
-</ngx-charts-bar-vertical-stacked>
-</div>
+<ngb-tabset class="block-width">
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+      <div (click)="onTabChange('all_patients')">All Patients</div>
+    </ng-template>
+    <ng-template ngbTabContent>
+      <!-- <div class="row">
+        <div class="col-sm-12">
+            <div class="dh-subheader">
+                <div class="dh-title">Dashboard</div>
+                <div class="dh-tool-bar">
+                  <div class="dh-tool-option">Today</div>
+                  <div class="dh-tool-option">Month</div>
+                  <div class="dh-tool-option">Year</div>
+                  <a href="#" class="btn">
+                      <span class="kt-subheader__btn-daterange-title">Today:</span>&nbsp;
+                      <span class="kt-subheader__btn-daterange-date">Nov 27</span>
+                      <i class="flaticon2-calendar-1"></i>
+                  </a>
+                </div>
+              </div>
+        </div>
+      </div> -->
+      <div class="row m-10">
+        <div class="col-sm-12">
+          <div class="dh-wrapper fl-unset">
+            <div class="col-lg-3 col-md-6">
+              <div class="dh-m-1">
+                <div class="wrapper">
+                  <h3 class="mb-0 font-weight-semibold">32,451</h3>
+                  <h5 class="mb-0 font-weight-medium text-primary">Current</h5>
+                  <p class="mb-0 text-muted">+14.00(+0.50%)</p>
+                </div>
+                <div class="spark-img">
+                  <img
+                    src="https://camo.githubusercontent.com/d1f0f37254ed71e2c815e433a314416c429aee09/687474703a2f2f6a616d69656269636b6e656c6c2e6769746875622e696f2f537061726b6c696e652f737061726b6c696e655f313430333039343439333639392e706e67"
+                    alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="dh-m-1">
+                <div class="wrapper">
+                  <h3 class="mb-0 font-weight-semibold">10,451</h3>
+                  <h5 class="mb-0 font-weight-medium text-primary">Waiting</h5>
+                  <p class="mb-0 text-muted">+14.00(+0.50%)</p>
+                </div>
+                <div class="spark-img">
+                  <img
+                    src="https://camo.githubusercontent.com/d1f0f37254ed71e2c815e433a314416c429aee09/687474703a2f2f6a616d69656269636b6e656c6c2e6769746875622e696f2f537061726b6c696e652f737061726b6c696e655f313430333039343439333639392e706e67"
+                    alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="dh-m-1">
+                <div class="wrapper">
+                  <h3 class="mb-0 font-weight-semibold">9,451</h3>
+                  <h5 class="mb-0 font-weight-medium text-primary">Admitted</h5>
+                  <p class="mb-0 text-muted">+14.00(+0.50%)</p>
+                </div>
+                <div class="spark-img">
+                  <img
+                    src="https://camo.githubusercontent.com/d1f0f37254ed71e2c815e433a314416c429aee09/687474703a2f2f6a616d69656269636b6e656c6c2e6769746875622e696f2f537061726b6c696e652f737061726b6c696e655f313430333039343439333639392e706e67"
+                    alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="dh-m-1">
+                <div class="wrapper">
+                  <h3 class="mb-0 font-weight-semibold">15,451</h3>
+                  <h5 class="mb-0 font-weight-medium text-primary">Consultant</h5>
+                  <p class="mb-0 text-muted">+14.00(+0.50%)</p>
+                </div>
+                <div class="spark-img">
+                  <img
+                    src="https://camo.githubusercontent.com/d1f0f37254ed71e2c815e433a314416c429aee09/687474703a2f2f6a616d69656269636b6e656c6c2e6769746875622e696f2f537061726b6c696e652f737061726b6c696e655f313430333039343439333639392e706e67"
+                    alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-10">
+        <div class="col-sm-6">
+          <div class="dh-wrapper">
+            <div class="dh-widget_header">
+              <h3 class="dh-widget_title">
+                Profit Share
+              </h3>
+              <span class="dh-widget_desc">
+                Profit Share between customers
+              </span>
+            </div>
+            <ngx-charts-pie-chart [view]="view" [scheme]="colorScheme" [results]="example" [gradient]="gradient"
+              [legend]="showLegend" [labels]="true" (select)="onSelect($event)">
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="dh-wrapper">
+            <div class="dh-widget_header">
+              <h3 class="dh-widget_title">
+                Profit Share
+              </h3>
+              <span class="dh-widget_desc">
+                Profit Share between customers
+              </span>
+            </div>
+            <ngx-charts-bar-vertical-stacked [view]="view" [scheme]="colorScheme" [results]="exampleTwo"
+              [rotateXAxisTicks]="true" [showGridLines]="true" [showGridLines]="true" [xAxis]="showXAxis"
+              [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [trimXAxisTicks]="true" [maxXAxisTickLength]="16"
+              [maxYAxisTickLength]="8" (select)="onSelect($event)">
+            </ngx-charts-bar-vertical-stacked>
+          </div>
+        </div>
+      </div>
+      <div class="row m-10">
+        <div class="col-sm-12">
+          <div class="dh-wrapper">
+            <div class="" style="width:90%">
+              <div class="dh-widget_header">
+                <h3 class="dh-widget_title">
+                  Profit Share
+                </h3>
+                <span class="dh-widget_desc">
+                  Profit Share between customers
+                </span>
+              </div>
+              <ngx-charts-bar-horizontal [scheme]="colorScheme" [results]="example" [gradient]="gradient"
+                [xAxis]="showXAxis" [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)">
+              </ngx-charts-bar-horizontal>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+      <div (click)="onTabChange('waiting')">Waiting</div>
+    </ng-template>
+    <ng-template ngbTabContent>
+        Waiting content
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

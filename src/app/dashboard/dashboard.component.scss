@@ -23,10 +23,22 @@
 }
 
 .dh-widget_title {
-  font-size: 1.3rem;
+  float:left;
+  width:calc(100% - 270px);
+  h3{
+    font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 0;
   color: #595d6e;
+  }
+}
+
+.dh-subheader-toolbar {
+  width:270px;
+  float:right;
+  .btn {
+    margin: 0px 5px;
+  }
 }
 
 .dh-widget_desc {
@@ -39,13 +51,19 @@
   display: flex;
 
   .spark-img {
-    width: 120px;
+    width: 60px;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 1rem;
+    margin-right: 1rem;
+    -webkit-box-shadow: rgba(69,65,78,.06) 0 1px 15px 1px;
+    box-shadow: rgba(69,65,78,.2) 0 1px 15px 1px;
+    border-radius: 5px;
+    text-align: center;
+    padding: .50rem;
 
-    img {
-      width: 100%;
+    i {
+      font-size:40px;
+      color: #00a2e0;
     }
   }
 }

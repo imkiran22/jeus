@@ -27,6 +27,8 @@ import { LocalStorageService } from './app-services/local-storage.service';
 import { HideOnMouseLeaveDirective } from './directives/hide-on-mouse-leave.directive';
 import { InMemoryServiceService } from './app-services/in-memory-service.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PatientAllDetailsComponent } from './patient-all-details/patient-all-details.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PatientsTableComponent,
     PatientsFilterComponent,
     HideOnMouseLeaveDirective,
-    DashboardComponent
+    DashboardComponent,
+    PatientAllDetailsComponent,
+    PatientProfileComponent
   ],
   imports: [
     BrowserModule,

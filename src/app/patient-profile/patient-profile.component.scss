@@ -1,0 +1,52 @@
+.profile-main-content-wrap {
+  padding: 20px;
+  background: #fff;
+  .v-timeline {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    .line {
+      background: #e4e4e4;
+      bottom: 0px;
+      left: 1.20rem;
+      margin: 0 -1px;
+      position: absolute;
+      top: 6px;
+      width: 2px;
+  }
+  .icon-block {
+    position: relative;
+  }
+  .item{
+    display: flex;
+    margin: 20px 0px;
+  }
+  .item-title {
+    color: #1f2022;
+  }
+  .item-date {
+    margin-bottom: 10px;
+    color: #bcbcbd;
+  }
+  .item-desc{
+    color: #1f2022;
+  }
+  .item-icon {
+    -webkit-box-align: center;
+    align-items: center;
+    background: #ced4da;
+    border-radius: 50%;
+    color: #fff;
+    display: -webkit-box;
+    display: flex;
+    font-size: 1.7rem;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -26px;
+    top: 5px;
+}
+}
+}

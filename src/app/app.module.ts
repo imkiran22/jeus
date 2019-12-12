@@ -29,6 +29,7 @@ import { InMemoryServiceService } from './app-services/in-memory-service.service
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PatientAllDetailsComponent } from './patient-all-details/patient-all-details.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { PatientPrescriptionComponent } from './patient-prescription/patient-prescription.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { PatientProfileComponent } from './patient-profile/patient-profile.compo
     HideOnMouseLeaveDirective,
     DashboardComponent,
     PatientAllDetailsComponent,
-    PatientProfileComponent
+    PatientProfileComponent,
+    PatientPrescriptionComponent
   ],
   imports: [
     BrowserModule,

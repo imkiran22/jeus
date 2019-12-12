@@ -1,0 +1,115 @@
+.profile-main-content-wrap {
+  padding: 20px;
+  background: #fff;
+  .pp-sec {
+    width: 120px;
+    float: left;
+  }
+  .pp-details {
+    float: left;
+    margin-top: 25px;
+    label {
+      float: left;
+      color: #98a6ad;
+    }
+    .label-desc {
+      float: left;
+      margin-left: 10px;
+      font-size: 16px;
+      margin-top: -3px;
+      color: #343a40;
+    }
+  }
+
+  .prescription-table {
+    margin: 10px 0px;
+    height: calc(100% - 100px);
+  
+    th {
+      background: #fafbfc;
+      color: #717171;
+      border-bottom: 1px solid #e0e4e8;
+      padding: 10px 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+  
+    td {
+      font-size: 13px;
+      color: #696666;
+      width: 16%;
+    }
+  
+    tr {
+      width: 100%;
+      display: inline-block;
+    }
+  
+    thead,
+    tbody {
+      display: block;
+  
+      th,
+      td {
+        &:nth-child(1) {
+          width: 30%;
+        }
+  
+        &:nth-child(2) {
+          width: 100px;
+        }
+  
+        &:nth-child(3) {
+          width: 15%;
+        }
+  
+        &:nth-child(4) {
+          width: 100px;
+        }
+  
+        &:nth-child(5) {
+          width: 100px;
+        }
+  
+        &:nth-child(6) {
+          width: 100px;
+        }
+  
+        &:nth-child(7) {
+          width: 20%;
+        }
+      }
+    }
+  
+    tbody {
+      height: calc(100% - 38px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  .prescription-pdf-view {
+    img{
+      width: 100%;
+    }
+  }
+  .pres-h {
+    margin-bottom: 10px;
+    .p-cal {
+      height: 36px;
+      float: left;
+      label{
+        margin-right: 10px;
+      }
+    }
+    .p-p-select {
+      float: left;
+      margin:0px 10px;
+    }
+    .p-t-h {
+      margin: 15px 0px;
+    }
+  }
+  .pres-type-table {
+    margin: 10px 0px 70px 0px;
+  }
+}

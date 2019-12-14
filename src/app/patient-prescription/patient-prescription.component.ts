@@ -12,6 +12,8 @@ interface City {
 export class PatientPrescriptionComponent implements OnInit {
   cities1: SelectItem[];
   selectedCities1: City[];
+  brands: string[] = ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo', 'VW'];
+  filteredBrands: any[];
   constructor() { 
     this.cities1 = [
       {label:'New York', value:{id:1, name: 'New York', code: 'NY'}},
@@ -26,4 +28,13 @@ export class PatientPrescriptionComponent implements OnInit {
   }
   
   date1: Date;
+  filterBrands(event) {
+    this.filteredBrands = [];
+    for(let i = 0; i < this.brands.length; i++) {
+        let brand = this.brands[i];
+        if(brand.toLowerCase().indexOf(event.query.toLowerCase()) == 0) {
+            this.filteredBrands.push(brand);
+        }
+    }
+}
 }

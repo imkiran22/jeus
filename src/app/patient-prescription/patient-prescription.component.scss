@@ -42,29 +42,28 @@
   
     tr {
       width: 100%;
-      display: inline-block;
+      // display: inline-block;
     }
   
     thead,
     tbody {
-      display: block;
+      // display: block;
   
       th,
       td {
         &:nth-child(1) {
+          width: 80px;
+        }
+        &:nth-child(2) {
           width: 30%;
         }
   
-        &:nth-child(2) {
-          width: 100px;
-        }
-  
         &:nth-child(3) {
-          width: 15%;
+          width: 100px;
         }
   
         &:nth-child(4) {
-          width: 100px;
+          width: 15%;
         }
   
         &:nth-child(5) {
@@ -76,7 +75,19 @@
         }
   
         &:nth-child(7) {
+          width: 100px;
+        }
+  
+        &:nth-child(8) {
           width: 20%;
+        }
+        &:nth-child(9) {
+          width: 80px;
+        }
+      }
+      td {
+        &:nth-child(1) {
+          padding-top: 20px;
         }
       }
     }
@@ -112,4 +123,62 @@
   .pres-type-table {
     margin: 10px 0px 70px 0px;
   }
+.pre-t-input {
+  height: 34px;
+  width: 43px;
+  padding: 5px;
+  outline: none;
+  border: 1px solid #ddd;
+}
+  .pre-t-select {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 3px;
+    
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mg-select {
+    width:80px;
+    select{
+      width:80px;
+    }
+  }
+  .food-select {
+    width:130px;
+    select{
+      width:130px;
+    }
+  }
+
+  select:focus { outline: none; }
+  .pre-t-select select {
+    height: 32px;
+    padding: 5px 0 5px 8px;
+    background: #fff;
+    border: none;
+    
+    /*hide default down arrow in webkit */
+    -webkit-appearance: none; 
+  }
+  
+  @-moz-document url-prefix(){
+    .pre-t-select select { width: 110%; }
+  }
+  
+  .fa-sort-desc {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+  }
+  
+   select::-ms-expand { display: none; } /* hide default down arrow in IE10*/
+  
+  /* hack to fall back in opera */
+  _:-o-prefocus, .selector {
+    .styled-select { background: none; }
+  }
+    
 }

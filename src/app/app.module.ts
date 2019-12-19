@@ -30,6 +30,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PatientAllDetailsComponent } from './patient-all-details/patient-all-details.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { PatientPrescriptionComponent } from './patient-prescription/patient-prescription.component';
+import { PatientImrComponent } from './patient-imr/patient-imr.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { PatientPrescriptionComponent } from './patient-prescription/patient-pre
     DashboardComponent,
     PatientAllDetailsComponent,
     PatientProfileComponent,
-    PatientPrescriptionComponent
+    PatientPrescriptionComponent,
+    PatientImrComponent
   ],
   imports: [
     BrowserModule,

@@ -5,9 +5,13 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { AccordionModule } from 'primeng/accordion';
+
 @NgModule({
- imports:      [ NgSelectModule, Ng5SliderModule, NgxChartsModule,CalendarModule,MultiSelectModule,AutoCompleteModule],
+ imports:      [ NgSelectModule, Ng5SliderModule, NgxChartsModule,CalendarModule,MultiSelectModule,
+  AutoCompleteModule,AccordionModule],
  declarations: [  ],
- exports:      [ NgSelectModule, Ng5SliderModule, NgxChartsModule,CalendarModule,MultiSelectModule,AutoCompleteModule]
+ exports:      [ NgSelectModule, Ng5SliderModule, NgxChartsModule,CalendarModule,MultiSelectModule,
+  AutoCompleteModule,AccordionModule]
 })
 export class SharedModule { }

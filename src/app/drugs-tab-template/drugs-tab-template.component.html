@@ -1,0 +1,38 @@
+<div class="drugs-template-wrapper">
+  <div class="drugs-template-table clearfix">
+    <div class="drugs-template-table-header">
+      <div class="tt-h template-table-h1">&nbsp;</div>
+      <div class="tt-h template-table-h2">TEMPLATE NAME</div>
+      <div class="tt-h template-table-h3">DESCRIPTION</div>
+      <div class="tt-h template-table-h4">ACTION</div>
+    </div>
+    <div class="drugs-template-table-body">
+      <div class="template-table-row">
+        <div class="tt-c template-table-body-col-1"><div class="btn btn-info"><i class="fa fa-plus"></i></div></div>
+        <div class="tt-c template-table-body-col-2">MALARIA</div>
+        <div class="tt-c template-table-body-col-3">FOR MALARIA</div>
+        <div class="tt-c template-table-body-col-4"><div class="btn btn-danger"><i class="fa fa-trash"></i></div></div>
+        <ul class="tt-inner-details">
+          <li class="tt-inner-detail-item">Tablet-1</li>
+          <li class="tt-inner-detail-item">Tablet-2</li>
+          <li class="tt-inner-detail-item">Tablet-3</li>
+        </ul>
+      </div>
+      <div class="template-table-row">
+        <div class="tt-c template-table-body-col-1"><div class="btn btn-info"><i class="fa fa-plus"></i></div></div>
+        <div class="tt-c template-table-body-col-2">MALARIA</div>
+        <div class="tt-c template-table-body-col-3">FOR MALARIA</div>
+        <div class="tt-c template-table-body-col-4"><div class="btn btn-danger"><i class="fa fa-trash"></i></div></div>
+        <ul class="tt-inner-details">
+          <li class="tt-inner-detail-item">
+            <p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands"
+                  (completeMethod)="filterBrands($event)" [size]="30" [minLength]="1" placeholder="Choose prescription">
+                </p-autoComplete>
+                <i class="btn btn-success fa fa-check"></i>   
+                <i class="btn btn-danger fa fa-trash"></i>    
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

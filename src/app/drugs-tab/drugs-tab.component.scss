@@ -1,0 +1,25 @@
+.drugs-search {
+  float: right;
+  margin: 10px;
+  input {
+    margin-right: 10px;
+  }
+}
+.drugs-table-wrapper {
+  background: #fff;
+  th {
+    background: #fafbfc;
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+    padding: 10px 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  td {
+    font-size: 13px;
+    color: #696666;
+    width: 16%;
+  }
+
+}

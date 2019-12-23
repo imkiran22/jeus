@@ -31,6 +31,9 @@ import { PatientAllDetailsComponent } from './patient-all-details/patient-all-de
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { PatientPrescriptionComponent } from './patient-prescription/patient-prescription.component';
 import { PatientImrComponent } from './patient-imr/patient-imr.component';
+import { DrugsComponent } from './drugs/drugs.component';
+import { DrugsTabComponent } from './drugs-tab/drugs-tab.component';
+import { DrugsTabTemplateComponent } from './drugs-tab-template/drugs-tab-template.component';
 
 
 @NgModule({
@@ -49,7 +52,10 @@ import { PatientImrComponent } from './patient-imr/patient-imr.component';
     PatientAllDetailsComponent,
     PatientProfileComponent,
     PatientPrescriptionComponent,
-    PatientImrComponent
+    PatientImrComponent,
+    DrugsComponent,
+    DrugsTabComponent,
+    DrugsTabTemplateComponent
   ],
   imports: [
     BrowserModule,

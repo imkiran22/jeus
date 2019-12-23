@@ -1,0 +1,55 @@
+.drugs-template-wrapper {
+  width: 100%;
+  .drugs-template-table {
+    background: #fff;
+    .drugs-template-table-header {
+      .tt-h {
+        float: left;
+        background: #fafbfc;
+        color: #717171;
+        border-bottom: 1px solid #e0e4e8;
+        padding: 10px 8px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .template-table-h1, .template-table-h4 {
+        width: 68px;
+      }
+      .template-table-h2 , .template-table-h3 {
+        width: 45%;
+      } 
+    }
+    .drugs-template-table-body{
+      .template-table-row {
+        clear: both;
+        .tt-c {
+          float: left;
+          padding: 10px 8px;
+          font-size: 13px;
+          border-bottom: 1px solid #e0e4e8;
+          .btn {
+            height: 19px;
+            padding: 3px 6px;
+          }
+        }
+        .template-table-body-col-1, .template-table-body-col-4 {
+          width: 68px;
+        }
+        .template-table-body-col-2 , .template-table-body-col-3 {
+          width: 45%;
+        }
+        .tt-inner-details {
+          margin-left: 50px;
+          float: left;
+          .tt-inner-detail-item {
+            margin: 10px 0;
+            .fa{
+              margin: 0 5px;
+            }
+          }
+        } 
+      }
+    }
+
+  }
+}

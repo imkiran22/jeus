@@ -5,12 +5,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './drugs-tab-template.component.html',
   styleUrls: ['./drugs-tab-template.component.scss']
 })
+
 export class DrugsTabTemplateComponent implements OnInit {
   brands: string[] = ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo', 'VW'];
   filteredBrands: any[];
-  constructor() { }
+  cars: any[];
+
+  cols: any[];
+  constructor() { 
+    this.cols = [
+      { field: 'vin', header: 'Vin' },
+      { field: 'year', header: 'Year' },
+      { field: 'brand', header: 'Brand' },
+      { field: 'color', header: 'Color' }
+    ];
+
+    this.cars = [
+      { vin: '1', year: '2000', brand: 'guru', color: 'yellow'},
+      { vin: '2', year: '2001', brand: 'shobhit', color: 'red'}
+    ];
+  }
 
   ngOnInit() {
+
   }
   filterBrands(event) {
     this.filteredBrands = [];

@@ -2,54 +2,128 @@
   width: 100%;
   .drugs-template-table {
     background: #fff;
-    .drugs-template-table-header {
-      .tt-h {
-        float: left;
-        background: #fafbfc;
-        color: #717171;
-        border-bottom: 1px solid #e0e4e8;
-        padding: 10px 8px;
-        font-size: 13px;
-        font-weight: 700;
-      }
-      .template-table-h1, .template-table-h4 {
-        width: 68px;
-      }
-      .template-table-h2 , .template-table-h3 {
-        width: 45%;
-      } 
-    }
-    .drugs-template-table-body{
-      .template-table-row {
-        clear: both;
-        .tt-c {
-          float: left;
-          padding: 10px 8px;
-          font-size: 13px;
-          border-bottom: 1px solid #e0e4e8;
-          .btn {
-            height: 19px;
-            padding: 3px 6px;
-          }
-        }
-        .template-table-body-col-1, .template-table-body-col-4 {
-          width: 68px;
-        }
-        .template-table-body-col-2 , .template-table-body-col-3 {
-          width: 45%;
-        }
-        .tt-inner-details {
-          margin-left: 50px;
-          float: left;
-          .tt-inner-detail-item {
-            margin: 10px 0;
-            .fa{
-              margin: 0 5px;
-            }
-          }
-        } 
-      }
-    }
-
+  
   }
 }
+.prescription-table {
+  margin: 10px 0px;
+
+  th {
+    background: #fafbfc;
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+    padding: 10px 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  td {
+    font-size: 13px;
+    color: #696666;
+    width: 16%;
+  }
+
+  tr {
+    width: 100%;
+  }
+
+  thead,
+  tbody {
+    // display: block;
+
+    th,
+    td {
+      &:nth-child(1) {
+        width: 25px;
+      }
+      &:nth-child(2) {
+        width: 25%;
+      }
+
+      &:nth-child(3) {
+        width: 150px;
+      }
+
+      &:nth-child(4) {
+        width: 150px;
+      }
+
+      &:nth-child(5) {
+        width: 100px;
+      }
+
+      &:nth-child(6) {
+        width: 100px;
+      }
+
+      &:nth-child(7) {
+        width: 100px;
+      }
+
+      &:nth-child(8) {
+        width: 80px;
+      }
+    }
+    td {
+      &:nth-child(1) {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  // tbody {
+  //   height: calc(100% - 38px);
+  //   overflow-y: auto;
+  //   overflow-x: hidden;
+  // }
+}
+.pre-t-input {
+  height: 34px;
+  width: 100px;
+  padding: 5px;
+  outline: none;
+  border: 1px solid #ddd;
+}
+.pre-t-select {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 3px;
+  
+  overflow: hidden;
+  position: relative;
+}
+.mg-select {
+  width:150px;
+  select{
+    width:150px;
+  }
+}
+
+select:focus { outline: none; }
+  .pre-t-select select {
+    height: 32px;
+    padding: 5px 0 5px 8px;
+    background: #fff;
+    border: none;
+    
+    /*hide default down arrow in webkit */
+    -webkit-appearance: none; 
+  }
+  
+  @-moz-document url-prefix(){
+    .pre-t-select select { width: 110%; }
+  }
+  
+  .fa-sort-desc {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+  }
+  
+   select::-ms-expand { display: none; } /* hide default down arrow in IE10*/
+  
+  /* hack to fall back in opera */
+  _:-o-prefocus, .selector {
+    .styled-select { background: none; }
+  }

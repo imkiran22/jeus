@@ -1,0 +1,58 @@
+.add-t-w{
+  label{
+    width: 100px;
+    text-align: right;
+    float: left;
+    margin: 10px 15px 0px 0px;
+  }
+}
+.pre-t-input {
+  height: 34px;
+  width: 100px;
+  padding: 5px;
+  outline: none;
+  border: 1px solid #ddd;
+}
+.pre-t-select {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 3px;
+  
+  overflow: hidden;
+  position: relative;
+}
+.mg-select {
+  width:150px;
+  select{
+    width:150px;
+  }
+}
+
+select:focus { outline: none; }
+  .pre-t-select select {
+    height: 32px;
+    padding: 5px 0 5px 8px;
+    background: #fff;
+    border: none;
+    
+    /*hide default down arrow in webkit */
+    -webkit-appearance: none; 
+  }
+  
+  @-moz-document url-prefix(){
+    .pre-t-select select { width: 110%; }
+  }
+  
+  .fa-sort-desc {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+  }
+  
+   select::-ms-expand { display: none; } /* hide default down arrow in IE10*/
+  
+  /* hack to fall back in opera */
+  _:-o-prefocus, .selector {
+    .styled-select { background: none; }
+  }

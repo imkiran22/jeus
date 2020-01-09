@@ -1,3 +1,4 @@
+<button class="btn btn-lg btn-primary float-right" (click)="open(content)">Add Template</button>
 <ngb-tabset class="block-width">
   <ngb-tab>
     <ng-template ngbTabTitle>Drugs</ng-template>
@@ -12,3 +13,54 @@
     </ng-template>
   </ngb-tab>
 </ngb-tabset>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Template</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="form-group  add-t-w">
+        <label>Drugs name</label>
+        <p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands"
+        (completeMethod)="filterBrands($event)" [size]="30" [minLength]="1" placeholder="Choose prescription"></p-autoComplete>
+      </div>
+      <div class="form-group add-t-w">
+        <label>TYPE</label>
+        <div class="pre-t-select mg-select">
+        <select>
+          <option>TABLET</option>
+          <option>DROP</option>
+        </select>
+        <span class="fa fa-sort-desc"></span>
+        </div>
+      </div>
+      <div class="form-group add-t-w">
+        <label>UNIT</label>
+        <div class="pre-t-select mg-select">
+        <select>
+          <option>100mg</option>
+          <option>200mg</option>
+        </select>
+        <span class="fa fa-sort-desc"></span>
+        </div>
+      </div>
+      <div class="form-group  add-t-w">
+        <label>COMPOSITION</label>
+        <input type="text" name="quantity" class="pre-t-input" value="ABC">
+      </div>
+      <div class="form-group  add-t-w">
+        <label>AVAILABLE</label>
+        <input type="text" name="quantity" class="pre-t-input" value="100">
+      </div>
+      <div class="form-group  add-t-w">
+        <label>SHELF</label>
+        <input type="text" name="quantity" class="pre-t-input" value="12-A">
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="modal.close('Save click')">Save Template</button>
+  </div>
+</ng-template>

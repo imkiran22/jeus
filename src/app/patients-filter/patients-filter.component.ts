@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { PatientsFilterModel } from '../models/patients-filter.model'
 import { Options } from 'ng5-slider';
+import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup } from '@angular/forms';
 @Component({
     selector: 'app-patients-filter',
     templateUrl: './patients-filter.component.html',
@@ -16,7 +18,7 @@ export class PatientsFilterComponent implements OnInit {
     minAge :number = 0
     maxAge :number = 150
     diagnosis :string[] = []
-
+    userForm: FormGroup;
     startValue: number = 10;
     endValue: number = 50;
     options: Options = {
@@ -25,8 +27,10 @@ export class PatientsFilterComponent implements OnInit {
       step: 5,
       showTicks: true
     };
-
-    constructor() { }
+    closeResult: string;
+    date5: Date;
+    date6: Date;
+    constructor(private modalService: NgbModal) { }
 
     ngOnInit() {
     }
@@ -53,4 +57,23 @@ export class PatientsFilterComponent implements OnInit {
         this.clearAllFilter()
         this.filterApplied.emit(this.patientsFilterModel)
     }
+    onSelect(event) {
+      this.userForm.get("userImg").setValue(event.files[0]);
+    }
+    open(content) {
+        this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+          this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+      }
+      private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+          return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+          return 'by clicking on a backdrop';
+        } else {
+          return  `with: ${reason}`;
+        }
+      }
 }

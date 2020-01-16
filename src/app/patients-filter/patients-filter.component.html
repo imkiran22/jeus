@@ -1,6 +1,7 @@
 <div class="filter-popup-wrapper">
   <div class="btn btn-primary float-right" (click)="ShowHideButton()">Filter</div>
   <div class="btn btn-primary float-right" (click)="onResetFilter()">Reset</div>
+  <div class="btn btn-primary float-right" (click)="open(content)">Add patient</div>
   <div *ngIf="showFilter" class="filter-popup-inner" #patientsfilterpopinner>
     <form action="">
       <div class="form-group gender-col">
@@ -46,3 +47,98 @@
     </form>
   </div>
 </div>
+
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Patient Registration form</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="profile-main-content-wrap">
+      <div class="page-content">
+        <div class="row">
+          <div class="col col-12 col-md-12 mb-4">
+            <label>Photo</label>
+              <div class="form-group avatar-box d-flex align-items-center">
+                <img src="../assets/images/male_avatar.png"
+                  width="100" height="100" alt="" class="rounded-500 mr-4">
+                  <p-fileUpload mode="basic" name="myfile[]" (onSelect)="onSelect($event)" chooseLabel="Upload photo"></p-fileUpload>
+
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label>Mobile number <span class="required" aria-required="true"> * </span></label> 
+                    <input class="form-control" type="number" placeholder="Mobile number">
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label>Email</label> 
+                    <input class="form-control" type="email" placeholder="Email ID">
+                  </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label>Name <span class="required" aria-required="true"> * </span></label> 
+                    <input class="form-control" type="text" placeholder="Name" >
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label>Father name <span class="required" aria-required="true"> * </span></label> 
+                    <input class="form-control" type="text" placeholder="Full name" >
+                  </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label>DOB <span class="required" aria-required="true"> * </span></label> 
+                    <p-calendar [(ngModel)]="date5" [showIcon]="true"></p-calendar>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label>Gender <span class="required" aria-required="true"> * </span></label> 
+                    <select class="selectpicker form-control" title="Gender" tabindex="-98">
+                      <option class="bs-title-option" value=""></option>
+                      <option>Male</option>
+                      <option selected="selected">Female</option>
+                    </select>
+                  </div>
+                </div>
+                </div>
+              <div class="row">
+                  <div class="col-12 col-sm-6">
+                      <div class="form-group"><label>Primary diagndsis</label> 
+                        <input class="form-control" type="text">
+                      </div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                      <div class="form-group"><label>Last visit</label> 
+                        <p-calendar [(ngModel)]="date6" [showIcon]="true"></p-calendar>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Address <span class="required" aria-required="true"> * </span>
+                </label> 
+                <textarea class="form-control" placeholder="Address" rows="3" >71 Pilgrim Avenue Chevy Chase, MD 20815</textarea>
+              </div>
+              <button type="button" class="btn btn-success btn-block">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
